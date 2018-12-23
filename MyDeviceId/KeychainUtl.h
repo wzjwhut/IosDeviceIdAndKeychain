@@ -12,11 +12,14 @@
 #import <Security/Security.h>
 
 @interface KeychainUtil : NSObject
-
++ (void)add:(NSString*) key data:(id)data;
++ (id)read:(NSString *)key;
++ (void)remove:(NSString*)key;
 @end
 
 @implementation KeychainUtil
-+ (NSMutableDictionary *)getKeychainQuery:(NSString *)service {
++ (NSMutableDictionary *)getKeychainQuery:(NSString *)service
+{
     return [NSMutableDictionary dictionaryWithObjectsAndKeys:
             (id)kSecClassGenericPassword,(id)kSecClass,
             service, (id)kSecAttrService,
@@ -25,7 +28,14 @@
             nil];
 }
 
-+ (void)addKeychainData:(id)data forKey:(NSString *)key{
++ (void)remove:(NSString*)key
+{
+    NSMutableDictionary *keychainQuery = [self getKeychainQuery:key];
+    SecItemDelete((__bridge CFDictionaryRef)keychainQuery);
+}
+
++ (void)add:(NSString*) key data:(id)data;
+{
     NSMutableDictionary *keychainQuery = [self getKeychainQuery:key];
     SecItemDelete((__bridge CFDictionaryRef)keychainQuery);
     NSString* bundlerId = [[NSBundle mainBundle] bundleIdentifier];
@@ -37,12 +47,8 @@
     }
 }
 
-+ (void)deleteWithService:(NSString *)service {
-    NSMutableDictionary *keychainQuery = [self getKeychainQuery:service];
-    SecItemDelete((CFDictionaryRef)keychainQuery);
-}
-
-+ (id)readForkey:(NSString *)key {
++ (id)read:(NSString *)key;
+{
     id ret = nil;
     NSMutableDictionary *keychainQuery = [self getKeychainQuery:key];
     [keychainQuery setObject:(id)kCFBooleanTrue forKey:(id)kSecReturnData];

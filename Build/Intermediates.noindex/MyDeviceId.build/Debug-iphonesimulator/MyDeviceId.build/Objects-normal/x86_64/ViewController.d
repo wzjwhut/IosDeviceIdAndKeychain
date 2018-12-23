@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/wzj/Library/Autosave\ Information/MyDeviceId/MyDeviceId/ViewController.m \
-  /Users/wzj/Library/Autosave\ Information/MyDeviceId/MyDeviceId/ViewController.h \
-  /Users/wzj/Library/Autosave\ Information/MyDeviceId/MyDeviceId/KeychainUtl.h
+  /Users/wzj/Documents/IosDeviceIdAndKeychain/MyDeviceId/ViewController.m \
+  /Users/wzj/Documents/IosDeviceIdAndKeychain/MyDeviceId/ViewController.h \
+  /Users/wzj/Documents/IosDeviceIdAndKeychain/MyDeviceId/KeychainUtl.h

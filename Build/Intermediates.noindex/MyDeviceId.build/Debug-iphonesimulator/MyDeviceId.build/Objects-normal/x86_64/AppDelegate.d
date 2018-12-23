@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/wzj/Library/Autosave\ Information/MyDeviceId/MyDeviceId/AppDelegate.m \
-  /Users/wzj/Library/Autosave\ Information/MyDeviceId/MyDeviceId/AppDelegate.h
+  /Users/wzj/Documents/IosDeviceIdAndKeychain/MyDeviceId/AppDelegate.m \
+  /Users/wzj/Documents/IosDeviceIdAndKeychain/MyDeviceId/AppDelegate.h
